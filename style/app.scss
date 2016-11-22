@@ -3,6 +3,7 @@
 @import './global/font-styles.scss';
 @import './global/variables.scss';
 @import './global/responsive.scss';
+@import './global/animations.scss';
 @import './global/mixins.scss';
 
 * {
@@ -19,22 +20,8 @@ h2 {
     line-height: 15px;
 }
 
-p {
-    font: 8px arial, sans-serif;
-    padding: 20px 0;
-}
-
-input {
-    background: none;
-    font: 10px arial, sans-serif;
-}
-
 button {
     @include button;
-}
-
-.row {
-    @include row;
 }
 
 #app {
@@ -67,13 +54,22 @@ button {
         pointer-events: all; //TESTING
         @include fixed-grid(2);
         pointer-events: all;
+        & .waiting {
+            color: #323764;
+        }
         & .active {
             color: $primary-color;
         }
-        tr {width:100vw;
+        tr {
+            transition: color 0.2s ease-out;
+            -webkit-transition: color 0.2s ease-out;
+            width:100vw;
             color: $secondary-color;
             &:hover {
-                color: $primary-color;
+                color: #9da0b6;
+            }
+            &:active {
+                color: #323764;
             }
         }
         td {
@@ -82,6 +78,10 @@ button {
         }
     }
     footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 40px;
         pointer-events: all; //TESTING
         // display: flex;
         // justify-content: space-between;
@@ -112,7 +112,7 @@ button {
         top: 0;
         right: 0;
         left: 0;
-        height: 500vh;
+        height: 240vh;
     }
 
     #layer-back {
@@ -144,10 +144,14 @@ button {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            @include grid(6);
+            @include grid(7);
             @media (min-width: 800px) and (orientation: landscape) {
                 @include fixed-grid(6, 1200px);
             }
+        }
+        p {
+            font: lighter 9px/16px Arial, Helvetica, sans-serif;
+            padding: 20px 0;
         }
     }
 
@@ -165,20 +169,95 @@ button {
     }
 
     #about > div {
-        & h2 {color: #f2c230}
-        & button {
+        h2 {color: #f2c230}
+        & > * {
+            text-align: center;
+            @media (min-width: 800px) and (orientation: landscape) {
+                @include grid(8);
+            }
+        }
+        button {
+            border: none;
             background: #e64c2e;
             &:hover {
                 background: #f2c230;
             }
         }
-        & > * {
-            text-align: center;
-            @include grid(8);
+    }
+
+    #work > div {
+        position: relative;
+        & > img {
+            width: 100%
+        }
+        & > span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            p {
+                position: absolute;
+                text-align:center;
+                @media (max-width: 800px), (orientation: portrait) {
+                    top: 40%;
+                    width: 80%;
+                    font-size: 1.2vw;
+                    line-height: 2vw;
+                }
+                @media (min-width: 800px) and (orientation: landscape) {
+                    top: 45%;
+                    @include grid(6);
+                }
+            }
         }
     }
 
-    #work > div > img { width: 100%}
+    #contact > div {
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            width: 80%;
+            @media (min-width: 800px) and (orientation: landscape) {
+                width: 50%;
+            }
+        }
+        input, textarea {
+            background: none;
+            color: white;
+            font: 10px arial, sans-serif;
+            width: 100%;
+            padding: 10px;
+            margin: 5%;
+            border: solid white 1px;
+        }
+        input {
+            height: 35px;
+        }
+        button {
+            display: block;
+            margin: auto;
+            background-color: #e64c2e;
+            border: none;
+            &:hover {
+                background: #468e26;
+                color: #468e26;
+                &:after {
+                    content: "\2713";
+                    position: relative;
+                    left: -12px;
+                    top: -3px;
+                    color: white;
+                    font-size: 20px;
+                    font-family: arial;
+                }
+            }
+        }
+    }
 
     #thanks p {
         display: block;

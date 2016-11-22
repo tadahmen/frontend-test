@@ -19,27 +19,27 @@
             <img id="logo" src="asset/images/logo.png">
             <nav id="menu">
                 <table>
-                    <tr id="nav-Home" class="active">
+                    <tr id="nav-Home" class="menu-item active">
 <!-- todo: navigation text should be numbered and put in td automatically -->
                         <td> 01 </td>
                         <td> Home </td>
                     </tr>
-                    <tr id="nav-About">
+                    <tr id="nav-About" class="menu-item">
                         <td> 02 </td>
                         <td> About </td>
                     </tr>
-                    <tr id="nav-Work">
+                    <tr id="nav-Work" class="menu-item">
                         <td> 03 </td>
                         <td> Work </td>
                     </tr>
-                    <tr id="nav-Contact">
+                    <tr id="nav-Contact" class="menu-item">
                         <td> 04 </td>
                         <td> Contact </td>
                     </tr>
                 </table>
             </nav>
 
-            <footer class="row">
+            <footer>
                 <p id="copyright" class="text-main"> &copy; 2016 - ALL RIGHTS RESERVED </p>
                 <div id="accounts">
                     <img src="asset/images/logo-facebook.png">
@@ -55,18 +55,15 @@
             <div id="layer-front" class="layer"> </div>
             <article id="content" class="layer">
                 <section id="welcome">
-                    <div class="row">
+                    <div>
                         <img src="asset/images/wordmark.png">
                         <div>
                             <h2> WELCOME TO </h2>
                             <h1> BLOCKLEVEL </h1>
-                            <div class="text-second">
-                                <p> Lorem ipsum dolor sit amet consectetur adipiscing elit.
-                                    Proin eleifend molestie porttitor. Donec sit amet nunc odio.
-                                    Ut neque metus, semper non semper at, malesuada a nisl.
-                                </p>
-                            </div>
-                            </pre>
+                            <p> Lorem ipsum dolor sit amet consectetur adipiscing elit.
+                                Proin eleifend molestie porttitor. Donec sit amet nunc odio.
+                                Ut neque metus, semper non semper at, malesuada a nisl.
+                            </p>
                         </div>
                     </div>
                 </section>
@@ -75,13 +72,11 @@
                         <span>
                             <h2 id="special-heading"> LET US TELL YOU MORE </h2>
                             <h1 id="special-heading"> ABOUT BLOCKLEVEL </h1>
-                            <div class="text-second">
-                                <p> Phasellus id rutrum lorem. Nam in erat ex. Nam lacinia arcu non tortor lacinia maximus.
-                                    Ut lobortis, tellus in laoreet tristique, urna neque cursus dui, eget scelerisque libero massa ac urna.
-                                    Sed cursus sed massa nec posuere. Etiam nec nibh dictum, tempus diam eget, faucibus ipsum.
-                                    Mauris auctor elit lacinia nulla auctor elementum.
-                                </p>
-                            </div>
+                            <p> Phasellus id rutrum lorem. Nam in erat ex. Nam lacinia arcu non tortor lacinia maximus.
+                                Ut lobortis, tellus in laoreet tristique, urna neque cursus dui, eget scelerisque libero massa ac urna.
+                                Sed cursus sed massa nec posuere. Etiam nec nibh dictum, tempus diam eget, faucibus ipsum.
+                                Mauris auctor elit lacinia nulla auctor elementum.
+                            </p>
                             <button> Read more </button>
                         </span>
                     </div>
@@ -89,15 +84,23 @@
                 <section id="work">
                     <div>
                         <h1 id="special-heading"> WORK </h1>
+                        <span>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod sapien nec justo hendrerit imperdiet.
+                                Nullam enim felis, volutpat at ante quis, pellentesque fermentum enim.
+                            </p>
+                        </span>
                         <img src="asset/images/project.png">
                     </div>
                 </section>
                 <section id="contact">
                     <div>
                         <h1 id="special-heading"> CONTACT </h1>
-                        <input type="text" placeholder="name" required>
-                        <input type=" text" placeholder="email-address" required>
-                        <img src="asset/images/wordmark.png">
+                        <form>
+                            <input type="text" placeholder="name" required>
+                            <input type="e-mail" placeholder="email-address" required>
+                            <textarea rows="12" cols="40" placeholder="message"></textarea>
+                            <button type="submit"> Submit </button>
+                        </form>
                     </div>
                 </section>
                 <section id="thanks">
